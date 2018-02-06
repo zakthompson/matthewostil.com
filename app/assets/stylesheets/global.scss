@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "muli";
+  src: font-url("Muli-ExtraLight.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "gloria";
+  src: font-url("GloriaHallelujah.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  margin-top: -5%;
+
+  .profile {
+    max-width: 14%;
+    min-width: 100px;
+    transform: translate(0, 50%);
+  }
+
+  .menu {
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    left: 8%;
+    line-height: 22px;
+    z-index: 1;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: "muli";
+      font-size: 13pt;
+      width: 105px;
+      border-bottom: 1px solid black;
+      margin-right: 10px;
+
+      &.active {
+        color: #3969B2;
+        border-bottom: 1px solid #3969B2;
+      }
+    }
+  }
+
+  .available {
+    font-family: "gloria";
+    font-size: 12pt;
+    color: #3969B2;
+    position: absolute;
+    top: 70%;
+    right: 2%;
+  }
+
+  .social {
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 2%;
+    width: 100%;
+    transform: translate(0, 50%);
+
+    a {
+      img {
+        width: 2.75%;
+        max-width: 56px;
+        min-width: 28px;
+        margin-left: 0.5%;
+      }
+    }
+  }
+}
+
+.content {
+  background-color: #F5F6F6;
+  width: 97%;
+  margin: auto;
+  padding-top: 125px;
+  padding-bottom: 25px;
+}
+
