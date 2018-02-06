@@ -1,4 +1,4 @@
-<%= form_with(model: resume, local: true) do |form| %>
+<%= form_with(model: resume, url: admin_resumes_path, local: true) do |form| %>
   <% if resume.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(resume.errors.count, "error") %> prohibited this resume from being saved:</h2>

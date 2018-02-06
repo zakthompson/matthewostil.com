@@ -1,4 +1,4 @@
-class ResumesController < ApplicationController
+class Admin::ResumesController < AdminController
   before_action :set_resume, only: [:update]
   def edit
     if Resume.any?

@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
-  resources :projects
-  resources :sessions, only: [:new, :create]
-  resources :resumes, only: [:create, :update]
-
   get 'about', to: 'pages#about'
   get 'resume', to: 'pages#resume'
+  get 'admin', to: 'admin#index'
+  get 'login', to: 'sessions#new'
 
-  get 'admin/resume', to: 'resumes#edit'
+  resources :sessions, only: [:create]
 
+  namespace :admin do
+    resources :projects
+    resources :resumes, only: [:create, :update]
+    get 'resume', to: 'resumes#edit'
+  end
 end

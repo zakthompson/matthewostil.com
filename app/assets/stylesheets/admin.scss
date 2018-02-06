@@ -1,0 +1,19 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.adminIndex {
+  font-family: "muli";
+
+  #notice {
+    color: green;
+  }
+
+  a {
+    display: block;
+    margin-bottom: 40px;
+    font-size: 20pt;
+    text-decoration: none;
+    color: #3969B2;
+  }
+}
