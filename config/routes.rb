@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
 
   resources :sessions, only: [:create]
+  resources :projects, only: [:show], controller: 'admin/projects'
 
   namespace :admin do
-    resources :projects
+    resources :projects, except: [:show]
+    resources :settings, only: [:edit, :update]
     resources :resumes, only: [:create, :update]
     get 'resume', to: 'resumes#edit'
   end

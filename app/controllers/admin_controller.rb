@@ -2,6 +2,7 @@ class AdminController < ApplicationController
   before_action :authenticate
 
   def index
+    @setting = Setting.first
   end
 
   private

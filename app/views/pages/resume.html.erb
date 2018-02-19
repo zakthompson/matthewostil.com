@@ -1,8 +1,8 @@
 <div class="resume">
   <div class="linkWrap">
-    <%= link_to 'Download Link', @resume.try(:file_url) %>
+    <%= link_to 'Download Link', @setting.try(:resume_url) %>
   </div>
   <div class="embedWrap">
-    <embed src="<%= @resume.file_url %>" type="application/pdf">
+    <embed src="<%= @setting.try(:resume_url) %>" type="application/pdf">
   </div>
 </div>

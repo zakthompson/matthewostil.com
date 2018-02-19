@@ -1,42 +1,61 @@
-<%= form_with(model: project, url: admin_projects_path, local: true) do |form| %>
-  <% if project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+<div class="project-form-wrap">
+  <%= form_with(model: [:admin, project], local: true) do |form| %>
+    <% if project.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-      <ul>
-      <% project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <ul>
+        <% project.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :project_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :tagline %>
+      <%= form.text_field :tagline, id: :project_tagline %>
+    </div>
+
+    <div class="field">
+      <%= form.label :company %>
+      <%= form.text_field :company, id: :project_company %>
+    </div>
+
+    <div class="field">
+      <%= form.label :summary %>
+      <%= form.text_area :summary, id: :project_summary %>
+    </div>
+
+    <div class="field">
+      <%= form.label :role %>
+      <%= form.text_area :role, id: :project_role %>
+    </div>
+
+    <div class="field">
+      <%= form.label :media %>
+      <%= form.text_area :media, id: :project_media %>
+    </div>
+
+
+    <h2>Images</h2>
+    <div class="add">
+      <%= link_to_add_association 'Add Image', form, :images %>
+    </div>
+
+    <div>
+      <%= form.fields_for :images do |image_form| %>
+        <%= render 'image_fields', f: image_form %>
       <% end %>
-      </ul>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :project_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :company %>
-    <%= form.text_field :company, id: :project_company %>
-  </div>
-
-  <div class="field">
-    <%= form.label :summary %>
-    <%= form.text_area :summary, id: :project_summary %>
-  </div>
-
-  <div class="field">
-    <%= form.label :role %>
-    <%= form.text_area :role, id: :project_role %>
-  </div>
-
-  <div class="field">
-    <%= form.label :media %>
-    <%= form.text_area :media, id: :project_media %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

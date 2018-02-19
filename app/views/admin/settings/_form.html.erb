@@ -1,0 +1,59 @@
+<div class="setting-form-wrap">
+  <%= form_with(model: [:admin, setting], local: true) do |form| %>
+    <% if setting.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(setting.errors.count, "error") %> prohibited these settings from being saved:</h2>
+
+        <ul>
+        <% setting.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :headshot %>
+      <%= form.file_field :headshot %>
+    </div>
+
+    <div class="field">
+      <%= form.label :resume %>
+      <%= form.file_field :resume %>
+    </div>
+
+    <div class="field">
+      <%= form.label :youtube %>
+      <%= form.text_field :youtube %>
+    </div>
+
+    <div class="field">
+      <%= form.label :linkedin %>
+      <%= form.text_field :linkedin %>
+    </div>
+
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= form.label :twitter %>
+      <%= form.text_field :twitter %>
+    </div>
+
+    <div class="field">
+      <%= form.label :about_image %>
+      <%= form.file_field :about_image %>
+    </div>
+
+    <div class="field">
+      <%= form.label :about %>
+      <%= form.text_area :about %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Update Settings' %>
+    </div>
+  <% end %>
+</div>

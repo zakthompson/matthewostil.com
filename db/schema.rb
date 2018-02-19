@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206002748) do
+ActiveRecord::Schema.define(version: 20180212023751) do
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "project_id"
+    t.boolean "feature"
+    t.string "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -20,10 +28,24 @@ ActiveRecord::Schema.define(version: 20180206002748) do
     t.text "media"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tagline"
   end
 
   create_table "resumes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "settings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "headshot"
+    t.string "resume"
+    t.string "youtube"
+    t.string "linkedin"
+    t.string "email"
+    t.string "twitter"
+    t.text "about"
+    t.string "about_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,4 +1,18 @@
 <div class="home">
   <div class="name">Matthew Ostil</div>
   <div class="tagline">// game designer &amp; developer</div>
+
+  <div id="hexGrid">
+    <% @projects.each do |project| %>
+      <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="<%= project_path(project) %>">
+            <img src="<%= project.images.where(feature: true).first.try(:file_url) %>" />
+            <h1><%= project.name %></h1>
+            <p><%= project.tagline %></p>
+          </a>
+        </div>
+      </li>
+    <% end %>
+  </div>
 </div>

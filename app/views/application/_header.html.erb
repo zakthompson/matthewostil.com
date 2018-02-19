@@ -1,17 +1,33 @@
 <div class="header">
-  <%= image_tag 'Profile.png', class: 'profile' %>
+  <img src="<%= Setting.first.try(:headshot_url) %>" class="profile" />
   <div class="menu">
     <%= active_link_to 'Projects', '/', active: :exact %>
     <%= active_link_to 'About', '/about', active: :exact %>
     <%= active_link_to 'Resume', '/resume', active: :exact %>
   </div>
-  <% if request.fullpath === '/' %>
+  <div class="responsive-menu">
+    <div class="b-nav">
+      <li><%= active_link_to 'Projects', '/', active: :exact, class_active: 'b-link b-link--active', class_inactive: 'b-link' %></li>
+      <li><%= active_link_to 'About', '/about', active: :exact, class_active: 'b-link b-link--active', class_inactive: 'b-link' %></li>
+      <li><%= active_link_to 'Resume', '/resume', active: :exact, class_active: 'b-link b-link--active', class_inactive: 'b-link' %></li>
+    </div>
+    <div class="b-container">
+      <div class="b-menu">
+        <div class="b-bun b-bun--top"></div>
+        <div class="b-bun b-bun--mid"></div>
+        <div class="b-bun b-bun--bottom"></div>
+      </div>
+    </div>
+  </div>
+  <% if request.fullpath == '/' %>
     <div class="available">Available for new opportunities!</div>
+  <% elsif request.fullpath == '/about' %>
+    <%= image_tag 'Tag_Social.png', class: 'touch' %>
   <% end %>
   <div class="social">
-    <%= link_to(image_tag('Button_Email.png'), 'mailto:matthewostil@gmail.com') %>
-    <%= link_to(image_tag('Button_Twitter.png'), 'https://twitter.com/matthewostil') %>
-    <%= link_to(image_tag('Button_LinkedIn.png'), 'https://www.linkedin.com/in/matthewostil/') %>
-    <%= link_to(image_tag('Button_Youtube.png'), 'mailto:matthewostil@gmail.com') %>
+    <%= link_to(image_tag('Button_Email.png'), "mailto:#{Setting.first.try(:email)}") %>
+    <%= link_to(image_tag('Button_Twitter.png'), Setting.first.try(:twitter)) %>
+    <%= link_to(image_tag('Button_LinkedIn.png'), Setting.first.try(:linkedin)) %>
+    <%= link_to(image_tag('Button_Youtube.png'), Setting.first.try(:youtube)) %>
   </div>
 </div>

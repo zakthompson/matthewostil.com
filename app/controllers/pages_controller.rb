@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :set_setting
+
   def home
     @projects = Project.all
   end
@@ -7,6 +9,11 @@ class PagesController < ApplicationController
   end
 
   def resume
-    @resume = Resume.first
   end
+
+  private
+
+    def set_setting
+      @setting = Setting.first
+    end
 end

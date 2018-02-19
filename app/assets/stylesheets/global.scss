@@ -48,6 +48,13 @@
     }
   }
 
+  .responsive-menu {
+    display: none;
+    position: absolute;
+    bottom: 85px;
+    left: 0;
+  }
+
   .available {
     font-family: "gloria";
     font-size: 12pt;
@@ -55,6 +62,13 @@
     position: absolute;
     top: 70%;
     right: 2%;
+  }
+
+  .touch {
+    position: absolute;
+    top: 65%;
+    right: 10%;
+    width: 15%;
   }
 
   .social {
@@ -67,8 +81,8 @@
 
     a {
       img {
-        width: 2.75%;
-        max-width: 56px;
+        width: 5%;
+        max-width: 42px;
         min-width: 28px;
         margin-left: 0.5%;
       }
@@ -84,3 +98,26 @@
   padding-bottom: 25px;
 }
 
+@media screen and (max-width: 1024px) {
+  .header {
+    .menu {
+      display: none;
+    }
+
+    .responsive-menu {
+      display: block;
+    }
+
+    .available {
+      display: none;
+    }
+
+    .touch {
+      display: none;
+    }
+  }
+
+  .content {
+    padding-top: 80px;
+  }
+}

@@ -1,29 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @project.company %>
-</p>
-
-<p>
-  <strong>Summary:</strong>
-  <%= @project.summary %>
-</p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @project.role %>
-</p>
-
-<p>
-  <strong>Media:</strong>
-  <%= @project.media %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<div class="project">
+  <div class="left">
+    <%= link_to image_tag('Button_ArrowLeft.png'), project_path(@prev_id), class: 'arrow prev' %>
+    <%= link_to image_tag('Button_ArrowRight.png'), project_path(@next_id), class: 'arrow next' %>
+    <h1><%= @project.name %></h1>
+    <h3><%= @project.company %></h3>
+    <h2>Summary</h2>
+    <div class="summary fr-view">
+      <%= @project.summary.html_safe %>
+    </div>
+    <h2>My Role</h2>
+    <div class="role fr-view">
+      <%= @project.role.html_safe %>
+    </div>
+    <h2>Media</h2>
+    <div class="media fr-view">
+      <%= @project.media.html_safe %>
+    </div>
+  </div>
+  <div class="right">
+    <div class="gallery">
+      <% @project.images.each do |image| %>
+        <div><img src="<%= image.file_url %>" /></div>
+      <% end %>
+    </div>
+  </div>
+</div>

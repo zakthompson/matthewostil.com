@@ -1,0 +1,17 @@
+<div class="nested-fields">
+  <div class="field image-field">
+    <% if f.object.try(:file_url) %>
+      <img src="<%= f.object.file_url %>" />
+    <% else %>
+      <%= f.label :file %>
+      <%= f.file_field :file %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :feature %>
+    <%= f.check_box :feature %>
+  </div>
+
+  <%= link_to_remove_association 'Remove Image', f %>
+</div>

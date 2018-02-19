@@ -12,6 +12,13 @@
   .tagline {
     font-size: 16pt;
     margin-top: 15px;
+    margin-bottom: 40px;
+  }
+
+  #hexGrid {
+    h1 {
+      margin: 0;
+    }
   }
 }
 
@@ -68,6 +75,31 @@
     embed {
       width: 100%;
       height: 800px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about {
+    text-align: center;
+
+    .left {
+      margin: auto;
+      display: block;
+      width: 90%;
+    }
+
+    .right {
+      margin: auto;
+      text-align: left;
+      display: block;
+      width: 90%;
+    }
+  }
+
+  .resume {
+    .embedWrap {
+      width: 90%;
     }
   }
 }

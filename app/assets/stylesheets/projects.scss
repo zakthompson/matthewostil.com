@@ -1,3 +1,165 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+form {
+  text-align: left;
+
+  img {
+    max-width: 200px;
+  }
+}
+
+table {
+  img {
+    max-width: 100px;
+  }
+}
+
+.project-form-wrap {
+  padding: 0 40px;
+
+  label {
+    font-weight: bold;
+  }
+
+  h2 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  .add {
+    display: inline-block;
+  }
+
+  .nested-fields {
+    display: inline-block;
+    margin-bottom: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .actions {
+    text-align: center;
+
+    input {
+      padding: 5px;
+    }
+  }
+}
+
+.project {
+  font-family: "muli";
+  text-align: left;
+
+  .left {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    padding: 0 60px 0 75px;
+    box-sizing: border-box;
+
+    .arrow {
+      position: absolute;
+      width: 30px;
+
+      img {
+        width: 100%;
+      }
+
+      &.prev {
+        left: 10px;
+      }
+
+      &.next {
+        right: 60px;
+      }
+    }
+
+    h1 {
+      line-height: 30pt;
+      font-size: 30pt;
+      margin-top: -5px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      width: 110px;
+      font-size: 14pt;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid black;
+      padding-bottom: 4px;
+    }
+
+    h3 {
+      text-transform: uppercase;
+      font-size: 11pt;
+    }
+
+    p {
+      font-size: 12pt;
+    }
+
+    a {
+      font-weight: bold;
+      text-decoration: none;
+      color: #3969B2;
+    }
+  }
+
+  .right {
+    display: inline-block;
+    width: 50%;
+
+    .gallery {
+      img {
+        width: 100%;
+      }
+
+      .slick-dots {
+        bottom: -25px;
+
+        li {
+          margin: 0;
+
+          button:before {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .project {
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+
+    .left {
+      text-align: left;
+      display: block;
+      width: 90%;
+      margin: auto;
+
+      .arrow {
+        &.next {
+          right: 10px;
+        }
+      }
+    }
+
+    .right {
+      margin: auto;
+      margin-bottom: 20px;
+      display: block;
+      width: 90%;
+    }
+  }
+}
