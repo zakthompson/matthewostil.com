@@ -17,7 +17,7 @@ about = %q(<p>Hi and welcome to my portfolio!</p>
 <p>Matthew Ostil</p>)
 youtube = 'https://www.youtube.com/channel/UCkwkyFXsVxNjXCMzb-4zycA'
 linkedin = 'https://www.linkedin.com/in/matthewostil/'
-email = 'matthewostil@gmail.com'
+email = 'matthew.ostil@gmail.com'
 twitter = 'https://twitter.com/matthewostil'
 
 if !Setting.any?
