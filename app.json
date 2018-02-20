@@ -1,0 +1,13 @@
+{
+  "name": "matthewostil.com",
+  "description": "Portfolio website for Matthew Ostil",
+  "website": "matthewostil.com",
+  "repository": "https://github.com/zakthompson/matthewostil.com",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  },
+  "env": {
+    "RAILS_ENV": "production",
+    "RACK_ENV": "production"
+  }
+}
