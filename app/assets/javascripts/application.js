@@ -15,9 +15,7 @@
 //= require jquery
 //= require jquery.slick
 //= require cocoon
-//= require froala_editor.min
-//= require plugins/font_size.min
-//= require plugins/link.min
+//= require tinymce
 //= require_tree .
 
 var body, burgerMenu, burgerContain, burgerNav;

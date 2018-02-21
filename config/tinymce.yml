@@ -1,0 +1,5 @@
+default:
+  selector: textarea
+  plugins:
+    - image
+    - link
