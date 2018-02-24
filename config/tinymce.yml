@@ -3,3 +3,4 @@ default:
   plugins:
     - image
     - link
+    - lists

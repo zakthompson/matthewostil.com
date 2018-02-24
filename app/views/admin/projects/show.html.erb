@@ -19,7 +19,7 @@
   </div>
   <div class="right">
     <div class="gallery">
-      <% @project.images.each do |image| %>
+      <% @project.images.where(feature: false).each do |image| %>
         <div><img src="<%= image.file_url %>" /></div>
       <% end %>
     </div>
