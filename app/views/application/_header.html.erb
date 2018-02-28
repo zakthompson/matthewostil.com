@@ -22,7 +22,10 @@
   <% if request.fullpath == '/' && Setting.first.try(:available) %>
     <div class="available">Available for new opportunities!</div>
   <% elsif request.fullpath == '/about' %>
-    <%= image_tag 'Tag_Social.png', class: 'touch' %>
+    <div class="keep-in-touch">
+      <div class="text">Keep in touch!</div>
+      <%= image_tag 'Social_Arrow.png', class: 'arrow' %>
+    </div>
   <% end %>
   <div class="social">
     <%= link_to(image_tag('Button_Email.png'), "mailto:#{Setting.first.try(:email)}") %>

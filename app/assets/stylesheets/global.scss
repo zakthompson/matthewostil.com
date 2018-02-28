@@ -65,6 +65,27 @@
     right: 2%;
   }
 
+  .keep-in-touch {
+    font-family: "gloria";
+    font-size: 12pt;
+    color: #3969B2;
+    position: absolute;
+    top: 65%;
+    right: 200px;
+    vertical-align: top;
+
+    .text {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .arrow {
+      margin-top: -2px;
+      display: inline-block;
+      max-width: 50px;
+    }
+  }
+
   .touch {
     position: absolute;
     top: 65%;
@@ -117,7 +138,7 @@
       display: none;
     }
 
-    .touch {
+    .keep-in-touch {
       display: none;
     }
   }
