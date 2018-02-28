@@ -24,13 +24,15 @@
     <% end %>
   </div>
   <div class="right">
-    <% imageToCheck = @project.images.where(feature: false).order(:order).first %>
-    <div class="gallery-wrapper" style="max-width:<%= imageToCheck.width < imageToCheck.height ? "50%" : "100%" %>">
-      <div class="gallery">
-        <% @project.images.where(feature: false).order(:order).each do |image| %>
-          <div><img src="<%= image.file_url %>" /></div>
-        <% end %>
+    <% if @project.images.where(feature: false).any? %>
+      <% imageToCheck = @project.images.where(feature: false).order(:order).first %>
+      <div class="gallery-wrapper" style="max-width:<%= imageToCheck.width < imageToCheck.height ? "50%" : "100%" %>">
+        <div class="gallery">
+          <% @project.images.where(feature: false).order(:order).each do |image| %>
+            <div><img src="<%= image.file_url %>" /></div>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
