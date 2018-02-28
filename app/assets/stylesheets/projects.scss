@@ -64,7 +64,7 @@ table {
 
     .arrow {
       position: absolute;
-      width: 30px;
+      width: 34px;
 
       img {
         width: 100%;
@@ -113,26 +113,37 @@ table {
   }
 
   .right {
+    text-align: center;
     display: inline-block;
     width: 50%;
 
-    .gallery {
-      img {
-        width: 100%;
-      }
+    .gallery-wrapper {
+      margin: auto;
 
-      .slick-dots {
-        bottom: -25px;
+      .gallery {
+        img {
+          width: 100%;
+        }
 
-        li {
-          margin: 0;
+        .slick-dots {
+          bottom: -25px;
 
-          button:before {
-            font-size: 10px;
+          li {
+            margin: 0;
+
+            button:before {
+              font-size: 10px;
+            }
           }
         }
       }
     }
+  }
+}
+
+@media (min-width: 1201px) {
+  .hex {
+    width: 16%;
   }
 }
 

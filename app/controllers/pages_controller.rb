@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :set_setting
 
   def home
-    @projects = Project.all
+    @projects = Project.all.order(:order)
   end
 
   def about

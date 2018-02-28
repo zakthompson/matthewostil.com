@@ -15,10 +15,11 @@
 .header {
   position: relative;
   text-align: center;
-  margin-top: -5%;
+  margin-top: -3%;
 
   .profile {
-    max-width: 14%;
+    width: 14%;
+    max-width: 175px;
     min-width: 100px;
     transform: translate(0, 50%);
   }
@@ -94,8 +95,12 @@
   background-color: #F5F6F6;
   width: 97%;
   margin: auto;
-  padding-top: 140px;
+  padding-top: 115px;
   padding-bottom: 25px;
+}
+
+.slick-dots li button:before {
+  color: #3969B2 !important;
 }
 
 @media screen and (max-width: 1024px) {

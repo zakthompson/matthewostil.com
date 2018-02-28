@@ -28,6 +28,11 @@
     </div>
 
     <div class="field">
+      <%= form.label :order %>
+      <%= form.text_field :order, id: :project_order %>
+    </div>
+
+    <div class="field">
       <%= form.label :summary %>
       <%= form.text_area :summary, id: :project_summary %>
     </div>
@@ -41,7 +46,6 @@
       <%= form.label :media %>
       <%= form.text_area :media, id: :project_media %>
     </div>
-
 
     <h2>Images</h2>
     <div class="add">

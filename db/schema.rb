@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212023751) do
+ActiveRecord::Schema.define(version: 20180228011859) do
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "project_id"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 20180212023751) do
     t.string "file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "order"
+    t.integer "width"
+    t.integer "height"
   end
 
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -29,6 +32,7 @@ ActiveRecord::Schema.define(version: 20180212023751) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "tagline"
+    t.integer "order"
   end
 
   create_table "settings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -42,6 +46,7 @@ ActiveRecord::Schema.define(version: 20180212023751) do
     t.string "about_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "available"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

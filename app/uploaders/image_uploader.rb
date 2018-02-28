@@ -28,6 +28,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+  process :store_dimensions
+
+  def store_dimensions
+    if file && model
+      model.width, model.height = `identify -format "%wx%h" #{file.path}`.split(/x/)
+    end
+  end
+
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process resize_to_fit: [50, 50]

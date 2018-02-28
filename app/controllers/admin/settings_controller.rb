@@ -21,6 +21,6 @@ class Admin::SettingsController < AdminController
     end
 
     def setting_params
-      params.require(:setting).permit(:headshot, :resume, :youtube, :linkedin, :email, :twitter, :about, :about_image)
+      params.require(:setting).permit(:headshot, :resume, :youtube, :linkedin, :email, :twitter, :about, :about_image, :available)
     end
 end

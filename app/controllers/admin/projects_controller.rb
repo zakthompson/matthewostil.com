@@ -5,7 +5,7 @@ class Admin::ProjectsController < AdminController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.all.order(:order)
   end
 
   # GET /projects/1
@@ -74,6 +74,6 @@ class Admin::ProjectsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :tagline, :company, :summary, :role, :media, images_attributes: [:id, :file, :feature, :_destroy])
+      params.require(:project).permit(:name, :tagline, :company, :summary, :role, :media, :order, images_attributes: [:id, :file, :feature, :_destroy])
     end
 end

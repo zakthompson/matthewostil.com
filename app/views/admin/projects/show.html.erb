@@ -5,23 +5,32 @@
     <h1><%= @project.name %></h1>
     <h3><%= @project.company %></h3>
     <h2>Summary</h2>
-    <div class="summary fr-view">
-      <%= @project.summary.html_safe %>
-    </div>
-    <h2>My Role</h2>
-    <div class="role fr-view">
-      <%= @project.role.html_safe %>
-    </div>
-    <h2>Media</h2>
-    <div class="media fr-view">
-      <%= @project.media.html_safe %>
-    </div>
+    <% if @project.summary.strip.length > 0 %>
+      <div class="summary fr-view">
+        <%= @project.summary.html_safe %>
+      </div>
+    <% end %>
+    <% if @project.role.strip.length > 0 %>
+      <h2>My Role</h2>
+      <div class="role fr-view">
+        <%= @project.role.html_safe %>
+      </div>
+    <% end %>
+    <% if @project.media.strip.length > 0 %>
+      <h2>Media</h2>
+      <div class="media fr-view">
+        <%= @project.media.html_safe %>
+      </div>
+    <% end %>
   </div>
   <div class="right">
-    <div class="gallery">
-      <% @project.images.where(feature: false).each do |image| %>
-        <div><img src="<%= image.file_url %>" /></div>
-      <% end %>
+    <% imageToCheck = @project.images.where(feature: false).order(:order).first %>
+    <div class="gallery-wrapper" style="max-width:<%= imageToCheck.width < imageToCheck.height ? "50%" : "100%" %>">
+      <div class="gallery">
+        <% @project.images.where(feature: false).order(:order).each do |image| %>
+          <div><img src="<%= image.file_url %>" /></div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
