@@ -24,10 +24,17 @@
     <% end %>
   </div>
   <div class="right">
-    <% if @project.images.where(feature: false).any? %>
+    <% if @project.images.where(feature: false).any? || @project.video_id %>
       <% imageToCheck = @project.images.where(feature: false).order(:order).first %>
-      <div class="gallery-wrapper" style="max-width:<%= imageToCheck.width < imageToCheck.height ? "50%" : "100%" %>">
+      <div class="gallery-wrapper" style="max-width:<%= imageToCheck && (imageToCheck.width < imageToCheck.height) ? "50%" : "100%" %>">
         <div class="gallery">
+          <% if @project.video_id.length > 0 %>
+            <div>
+              <div class="video-wrapper">
+                <iframe src="https://youtube.com/embed/<%= @project.video_id %>?autoplay=1&modestbranding=1&mute=1" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          <% end %>
           <% @project.images.where(feature: false).order(:order).each do |image| %>
             <div><img src="<%= image.file_url %>" /></div>
           <% end %>

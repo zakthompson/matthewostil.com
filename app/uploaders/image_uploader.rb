@@ -31,7 +31,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   process :store_dimensions
 
   def store_dimensions
-    if file && model
+    if file && model && model.has_attribute?(:width)
       if file.path.split(".").last == "gif"
         model.width, model.height = `identify -format "%wx%h" #{file.path}[0]`.split(/x/)
       else

@@ -74,6 +74,6 @@ class Admin::ProjectsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :tagline, :company, :summary, :role, :media, :order, images_attributes: [:id, :file, :feature, :_destroy])
+      params.require(:project).permit(:name, :tagline, :company, :summary, :role, :media, :order, :video_id, images_attributes: [:id, :file, :feature, :order, :_destroy])
     end
 end

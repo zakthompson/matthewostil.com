@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228011859) do
+ActiveRecord::Schema.define(version: 20211014183407) do
 
-  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.integer "project_id"
     t.boolean "feature"
     t.string "file"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20180228011859) do
     t.integer "height"
   end
 
-  create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.string "name"
     t.string "company"
     t.text "summary"
@@ -33,9 +33,10 @@ ActiveRecord::Schema.define(version: 20180228011859) do
     t.datetime "updated_at", null: false
     t.string "tagline"
     t.integer "order"
+    t.string "video_id"
   end
 
-  create_table "settings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "settings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.string "headshot"
     t.string "resume"
     t.string "youtube"
@@ -49,7 +50,7 @@ ActiveRecord::Schema.define(version: 20180228011859) do
     t.boolean "available"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false

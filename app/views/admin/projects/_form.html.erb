@@ -47,6 +47,11 @@
       <%= form.text_area :media, id: :project_media %>
     </div>
 
+    <div class="field">
+      <%= form.label :video_id, 'Video ID' %>
+      <%= form.text_field :video_id, id: :project_video_id %>
+    </div>
+
     <h2>Images</h2>
     <div class="add">
       <%= link_to_add_association 'Add Image', form, :images, data: { 'association-insertion-node': 'div#image-fields', 'association-insertion-method': 'append' } %>
