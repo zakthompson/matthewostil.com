@@ -11,7 +11,7 @@ class Admin::ProjectsController < AdminController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    ids = Project.pluck(:id)
+    ids = Project.order(:order).pluck(:id)
     index = ids.index(@project.id)
     @prev_id = index == 0 ? ids[ids.length - 1] : ids[index - 1]
     @next_id = index == ids.length - 1 ? ids[0] : ids[index + 1]
