@@ -34,7 +34,7 @@ RUN apk update && apk add mysql mysql-dev nodejs tzdata \
 USER ruby
 
 COPY --chown=ruby:ruby --from=builder /usr/local/bundle /usr/local/bundle
-COPY --chown=ruby:ruby --from=builder /app/public /public
+COPY --chown=ruby:ruby --from=builder /app/public public
 COPY --chown=ruby:ruby . .
 
 EXPOSE 3000

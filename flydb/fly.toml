@@ -1,0 +1,24 @@
+# fly.toml file generated for matthewostil-mysql on 2022-11-24T00:34:28-05:00
+
+app = "matthewostil-mysql"
+kill_signal = "SIGINT"
+kill_timeout = 5
+
+[mounts]
+  source = "matthewostil_data"
+  destination = "/data"
+
+[env]
+  MYSQL_DATABASE = "matthewostil"
+  MYSQL_USER = "admin"
+
+[build]
+  image = "mysql:5.7"
+
+[experimental]
+  cmd = [
+    "--default-authentication-plugin",
+    "mysql_native_password",
+    "--datadir",
+    "/data/mysql"
+  ]
