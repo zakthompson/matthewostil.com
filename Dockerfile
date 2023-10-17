@@ -2,7 +2,7 @@ FROM ruby:2-alpine as builder
 
 WORKDIR /app
 
-RUN apk update && apk add nodejs yarn build-base mysql mysql-client mysql-dev tzdata imagemagick \
+RUN apk update && apk add nodejs yarn build-base mysql mysql-client mysql-dev tzdata \
   && adduser -D ruby \
   && gem install bundler:1.16.1 \
   && mkdir -p /node_modules /usr/local/bundle \
@@ -28,7 +28,7 @@ FROM ruby:2-alpine as app
 
 WORKDIR /app
 
-RUN apk update && apk add mysql mysql-dev nodejs tzdata \
+RUN apk update && apk add mysql mysql-dev nodejs tzdata imagemagick \
   && adduser -D ruby && chown ruby:ruby -R /app
 
 USER ruby
