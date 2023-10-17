@@ -13,7 +13,6 @@ processes = []
   PORT = "8080"
   RAILS_ENV = "production"
   RAILS_SERVE_STATIC_FILES = "true"
-  RAILS_LOG_TO_STDOUT = "1"
 
 [experimental]
   allowed_public_ports = []
