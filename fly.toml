@@ -20,7 +20,7 @@ processes = []
 
 [[services]]
   http_checks = []
-  internal_port = 8080 
+  internal_port = 8080
   processes = ["app"]
   protocol = "tcp"
   script_checks = []
@@ -43,7 +43,3 @@ processes = []
     interval = "15s"
     restart_limit = 0
     timeout = "2s"
-
-[[statics]]
-  guest_path = "/app/public"
-  url_prefix = "/"
